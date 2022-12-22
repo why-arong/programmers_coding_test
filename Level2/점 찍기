@@ -1,0 +1,22 @@
+## n*2로 최적화 코드 (시간초과)
+
+def solution(k, d):
+    n = int(d/k)
+    dist = d * d
+    result = 0
+    count = 0
+    
+    
+    for i in range(n+1):
+        x = i * k
+        rest = dist - x**2
+        z = int((rest ** 0.5) / k)
+        # print(i, z)
+        for j in range(z+1):
+            count += 1
+            dist_x = i * k
+            dist_y = j * k
+            if dist_x ** 2 + dist_y ** 2 <= dist:
+                result += 1
+    # print(count)
+    return result
