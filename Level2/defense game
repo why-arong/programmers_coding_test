@@ -1,0 +1,27 @@
+def findMaxIndex(arr):
+        m = arr[0]
+        index = 0
+        for i, val in enumerate(arr):
+            if val > m:
+                m = val
+                index = i
+        return index
+    
+def solution(n, k, enemy):
+
+    if k >= len(enemy):
+        return len(enemy)
+    
+    number = n
+    while k >= 0: 
+        count = 0
+        n = number
+        for i, damage in enumerate(enemy):
+            n -= damage
+            if n < 0:
+                a = findMaxIndex(enemy[:i+1])
+                enemy[a] = 0
+                k -= 1
+                break
+            count += 1
+    return count
