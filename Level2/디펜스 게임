@@ -1,3 +1,7 @@
+# 첫번째 시도: 시간초과 
+
+이유: 시간복잡도 n^2으로 개선 필요
+
 def findMaxIndex(arr):
         m = arr[0]
         index = 0
